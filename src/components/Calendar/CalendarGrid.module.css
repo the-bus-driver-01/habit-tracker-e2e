@@ -1,0 +1,263 @@
+.grid {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.weekHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.weekDay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-align: center;
+}
+
+.datesContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #f3f4f6;
+}
+
+.day {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0;
+  border: none;
+  background-color: #ffffff;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.day:hover:not(:disabled) {
+  background-color: #f3f4f6;
+}
+
+.day:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+.day:active:not(:disabled) {
+  background-color: #e5e7eb;
+  transform: scale(0.98);
+}
+
+.dayNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  transition: inherit;
+}
+
+.day.otherMonth {
+  color: #9ca3af;
+}
+
+.day.otherMonth:hover:not(:disabled) {
+  color: #6b7280;
+  background-color: #f9fafb;
+}
+
+.day.today .dayNumber {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.day.today:hover:not(:disabled) .dayNumber {
+  background-color: #bfdbfe;
+}
+
+.day.selected .dayNumber {
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.day.selected:hover:not(:disabled) .dayNumber {
+  background-color: #2563eb;
+}
+
+.day.selected:focus .dayNumber {
+  background-color: #1d4ed8;
+}
+
+.day.highlighted .dayNumber {
+  background-color: #fef3c7;
+  color: #d97706;
+  font-weight: 600;
+}
+
+.day.highlighted:hover:not(:disabled) .dayNumber {
+  background-color: #fde68a;
+}
+
+.day.highlighted.selected .dayNumber {
+  background-color: #f59e0b;
+  color: #ffffff;
+}
+
+.day.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.day.disabled .dayNumber {
+  color: #9ca3af;
+}
+
+/* Keyboard navigation styles */
+.day[tabindex="0"] {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .grid {
+    background-color: #1f2937;
+  }
+
+  .weekHeader {
+    border-bottom-color: #374151;
+  }
+
+  .weekDay {
+    color: #9ca3af;
+  }
+
+  .datesContainer {
+    background-color: #374151;
+  }
+
+  .day {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+
+  .day:hover:not(:disabled) {
+    background-color: #374151;
+  }
+
+  .day:active:not(:disabled) {
+    background-color: #4b5563;
+  }
+
+  .day.otherMonth {
+    color: #6b7280;
+  }
+
+  .day.otherMonth:hover:not(:disabled) {
+    color: #9ca3af;
+    background-color: #374151;
+  }
+
+  .day.today .dayNumber {
+    background-color: #1e40af;
+    color: #93c5fd;
+  }
+
+  .day.today:hover:not(:disabled) .dayNumber {
+    background-color: #1d4ed8;
+  }
+
+  .day.selected .dayNumber {
+    background-color: #3b82f6;
+    color: #ffffff;
+  }
+
+  .day.selected:hover:not(:disabled) .dayNumber {
+    background-color: #2563eb;
+  }
+
+  .day.highlighted .dayNumber {
+    background-color: #f59e0b;
+    color: #1f2937;
+  }
+
+  .day.highlighted:hover:not(:disabled) .dayNumber {
+    background-color: #d97706;
+  }
+
+  .day.highlighted.selected .dayNumber {
+    background-color: #f59e0b;
+    color: #1f2937;
+  }
+
+  .day.disabled .dayNumber {
+    color: #4b5563;
+  }
+
+  .day[tabindex="0"] {
+    outline-color: #60a5fa;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .weekDay {
+    padding: 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .day {
+    height: 2rem;
+  }
+
+  .dayNumber {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .day {
+    height: 3rem;
+  }
+
+  .dayNumber {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .day {
+    border: 1px solid currentColor;
+  }
+
+  .day.selected .dayNumber {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+  }
+
+  .day.today .dayNumber {
+    border: 2px solid #0066cc;
+  }
+}

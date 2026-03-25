@@ -1,0 +1,93 @@
+.calendar {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.calendar:focus-within {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Ensure smooth transitions between months */
+.calendar * {
+  box-sizing: border-box;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .calendar {
+    background-color: #1f2937;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  .calendar:focus-within {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(96, 165, 250, 0.2);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .calendar {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar {
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+  }
+}
+
+@media (min-width: 768px) {
+  .calendar {
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .calendar {
+    max-width: 500px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .calendar {
+    border: 2px solid currentColor;
+    box-shadow: none;
+  }
+
+  .calendar:focus-within {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .calendar,
+  .calendar * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .calendar {
+    box-shadow: none;
+    border: 1px solid #000;
+    background-color: white;
+  }
+}
