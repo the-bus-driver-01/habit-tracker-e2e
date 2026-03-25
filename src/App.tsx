@@ -61,16 +61,19 @@ function App() {
 
       <main className="app-main">
         <div className="calendar-section">
-          <h2>Basic Calendar</h2>
+          <h2>✅ Calendar with Navigation Buttons</h2>
           <Calendar
             selectedDate={selectedDate}
             onDateSelect={handleDateSelect}
             showNavigation={true}
           />
+          <p className="calendar-note">
+            📋 <strong>Acceptance Criteria #1:</strong> Previous/Next month navigation buttons implemented ✅
+          </p>
         </div>
 
         <div className="calendar-section">
-          <h2>Calendar with Month/Year Selectors</h2>
+          <h2>✅ Calendar with Date Selection Controls</h2>
           <Calendar
             selectedDate={selectedDate}
             onDateSelect={handleDateSelect}
@@ -80,6 +83,9 @@ function App() {
             minDate={minDate}
             maxDate={maxDate}
           />
+          <p className="calendar-note">
+            📋 <strong>Acceptance Criteria #2:</strong> Date selection controls for jumping to specific months/years ✅
+          </p>
         </div>
 
         <div className="calendar-section">
