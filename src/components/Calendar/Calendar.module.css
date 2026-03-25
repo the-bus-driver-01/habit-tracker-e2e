@@ -1,0 +1,166 @@
+.calendarContainer {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 500px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.navButton {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+  color: #333;
+  min-width: 40px;
+}
+
+.navButton:hover {
+  background: #e0e0e0;
+  border-color: #999;
+}
+
+.navButton:active {
+  transform: scale(0.95);
+}
+
+.monthYear {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  min-width: 150px;
+}
+
+.weekDayLabels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.weekDayLabel {
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.dayCell {
+  aspect-ratio: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.2s ease;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+}
+
+.dayCell:hover:not(:disabled) {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+.dayCell:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.dayCell.empty {
+  background: transparent;
+  border: none;
+  cursor: default;
+}
+
+.dayCell.otherMonth {
+  color: #ccc;
+  background: #fafafa;
+  cursor: default;
+}
+
+.dayCell.otherMonth:hover {
+  background: #fafafa;
+  border-color: #e0e0e0;
+}
+
+.dayCell.selected {
+  background: #4a90e2;
+  color: white;
+  border-color: #2e5c8a;
+  font-weight: 600;
+}
+
+.dayCell.selected:hover:not(:disabled) {
+  background: #3a7fd1;
+  border-color: #2e5c8a;
+}
+
+.dayCell.today {
+  border-color: #4a90e2;
+  border-width: 2px;
+}
+
+.dayCell.today:not(.selected) {
+  color: #4a90e2;
+  font-weight: 600;
+}
+
+.dayCell:disabled {
+  cursor: not-allowed;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+  .calendarContainer {
+    padding: 1rem;
+  }
+
+  .monthYear {
+    font-size: 1.25rem;
+    min-width: 100px;
+  }
+
+  .dayCell {
+    min-height: 36px;
+    font-size: 0.75rem;
+  }
+
+  .weekDayLabel {
+    font-size: 0.75rem;
+    padding: 0.25rem 0;
+  }
+}
