@@ -7,7 +7,6 @@ function App() {
 
   const handleDateSelect = (date: Date) => {
     setSelectedDate(date);
-    console.log('Selected date:', date);
   };
 
   // Example: Disable weekends
