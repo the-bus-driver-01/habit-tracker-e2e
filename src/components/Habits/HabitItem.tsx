@@ -67,7 +67,6 @@ export function HabitItem({ habit, onEdit, onDelete, isLoading = false, classNam
       setShowDeleteConfirm(false);
     } catch (error) {
       // Error handling is done in parent component
-      console.error('Delete failed:', error);
     } finally {
       setIsDeleting(false);
     }

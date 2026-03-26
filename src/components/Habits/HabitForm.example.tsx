@@ -14,7 +14,6 @@ export function HabitFormExample() {
   const [successMessage, setSuccessMessage] = useState('');
 
   const handleSuccess = (habitId: string) => {
-    console.log('Habit created successfully with ID:', habitId);
     setSuccessMessage(`Habit created successfully!`);
     setShowForm(false);
 
@@ -79,7 +78,6 @@ export function HabitFormModal() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSuccess = (habitId: string) => {
-    console.log('Habit created:', habitId);
     setIsOpen(false);
     // Add your success handling here (e.g., show toast, refresh data)
   };
@@ -116,9 +114,8 @@ export function HabitFormValidationExample() {
   const handleFormSubmit = async (data: any) => {
     try {
       // Your validation logic here
-      console.log('Form data:', data);
     } catch (error) {
-      console.error('Form submission error:', error);
+      // Handle form submission error
     }
   };
 
@@ -126,7 +123,7 @@ export function HabitFormValidationExample() {
     <div className="max-w-2xl mx-auto">
       <HabitForm
         onSuccess={(habitId) => {
-          console.log('Success:', habitId);
+          // Handle success
         }}
         className="border border-gray-200"
       />
